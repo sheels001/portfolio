@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sheel Shah | Portfolio</title>
+<meta name="description" content="Sheel Shah — Engineer, builder, and entrepreneur focused on deep tech, medical devices, and defense.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #1B2A4A;
+  --navy-deep: #0F1B33;
+  --teal: #00B4D8;
+  --teal-dark: #0096B7;
+  --teal-glow: rgba(0, 180, 216, 0.15);
+  --white: #F8FAFB;
+  --off-white: #E8EDEF;
+  --gray: #8899AA;
+  --accent-red: #E63946;
+  --green: #2ECC71;
+  --card-bg: rgba(255,255,255,0.04);
+  --card-border: rgba(255,255,255,0.08);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--navy-deep);
+  color: var(--white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ========================
+   NAV
+   ======================== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1.25rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(20px);
+  background: rgba(15, 27, 51, 0.7);
+  border-bottom: 1px solid var(--card-border);
+  transition: all 0.3s ease;
+}
+
+nav .logo {
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: var(--teal);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+nav .links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+nav .links a {
+  color: var(--gray);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+nav .links a:hover { color: var(--teal); }
+
+/* ========================
+   HERO
+   ======================== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8rem 3rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -15%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, var(--teal-glow) 0%, transparent 70%);
+  pointer-events: none;
+  animation: pulse-glow 6s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+.hero-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--teal);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fade-up 0.8s ease forwards 0.2s;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.75rem;
+  opacity: 0;
+  animation: fade-up 0.8s ease forwards 0.4s;
+}
+
+.hero h1 .first-name {
+  color: var(--white);
+}
+
+.hero h1 .last-name {
+  color: var(--teal);
+}
+
+.hero-tagline {
+  font-size: 1.2rem;
+  color: var(--gray);
+  max-width: 600px;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: fade-up 0.8s ease forwards 0.6s;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1.25rem;
+  opacity: 0;
+  animation: fade-up 0.8s ease forwards 0.8s;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 2rem;
+  background: var(--teal);
+  color: var(--navy-deep);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  letter-spacing: 0.02em;
+}
+
+.btn-primary:hover {
+  background: var(--teal-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 180, 216, 0.3);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 2rem;
+  background: transparent;
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-radius: 6px;
+  border: 1px solid var(--card-border);
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================
+   SECTION BASE
+   ======================== */
+section {
+  padding: 6rem 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--teal);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.section-divider {
+  width: 60px;
+  height: 3px;
+  background: var(--teal);
+  margin-bottom: 3rem;
+  border-radius: 2px;
+}
+
+/* ========================
+   PROJECT — HUDDLE HEALTH
+   ======================== */
+#project {
+  padding-top: 2rem;
+}
+
+.project-hero-card {
+  background: linear-gradient(135deg, var(--navy) 0%, rgba(0, 180, 216, 0.08) 100%);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 3.5rem;
+  margin-bottom: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-hero-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0,180,216,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.project-hero-card .project-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.project-hero-card .project-name span {
+  color: var(--teal);
+}
+
+.project-subtitle {
+  font-size: 1.15rem;
+  color: var(--gray);
+  max-width: 650px;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.project-role-badge {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  background: var(--teal-glow);
+  border: 1px solid rgba(0,180,216,0.3);
+  border-radius: 100px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--teal);
+  letter-spacing: 0.05em;
+}
+
+/* Stats Row */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.stat-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  border-color: var(--teal);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,180,216,0.1);
+}
+
+.stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--teal);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--gray);
+  line-height: 1.4;
+}
+
+/* Content Blocks */
+.content-block {
+  margin-bottom: 4rem;
+}
+
+.content-block h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+.content-block p {
+  color: var(--off-white);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 750px;
+}
+
+/* Feature Grid */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--teal);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.feature-card:hover::before { opacity: 1; }
+
+.feature-card:hover {
+  border-color: rgba(0,180,216,0.2);
+  background: rgba(255,255,255,0.06);
+}
+
+.feature-icon {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--white);
+}
+
+.feature-card p {
+  font-size: 0.9rem;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+/* Competitor Table */
+.competitor-table-wrapper {
+  overflow-x: auto;
+  margin-top: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+}
+
+.competitor-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.competitor-table thead {
+  background: var(--navy);
+}
+
+.competitor-table th {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--gray);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.competitor-table th:first-child {
+  color: var(--white);
+}
+
+.competitor-table th.highlight {
+  color: var(--teal);
+  background: rgba(0,180,216,0.05);
+}
+
+.competitor-table td {
+  padding: 0.9rem 1.25rem;
+  border-bottom: 1px solid var(--card-border);
+  color: var(--off-white);
+}
+
+.competitor-table td.highlight {
+  background: rgba(0,180,216,0.03);
+}
+
+.competitor-table tbody tr:last-child td { border-bottom: none; }
+
+.check { color: var(--green); font-weight: 700; }
+.warn { color: #F4A261; font-weight: 700; }
+.cross { color: var(--accent-red); font-weight: 700; }
+
+/* My Role */
+.role-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.role-item {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 1.75rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.role-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--teal);
+  background: var(--teal-glow);
+  border-radius: 6px;
+  padding: 0.3rem 0.6rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.role-item p {
+  color: var(--off-white);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Market Sizing */
+.market-row {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.market-circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.circle {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  border: 2px solid;
+  transition: transform 0.3s ease;
+}
+
+.circle:hover { transform: scale(1.05); }
+
+.circle.tam { border-color: var(--teal); background: rgba(0,180,216,0.08); }
+.circle.sam { border-color: #F4A261; background: rgba(244,162,97,0.08); width: 140px; height: 140px; }
+.circle.som { border-color: var(--green); background: rgba(46,204,113,0.08); width: 120px; height: 120px; }
+
+.circle-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--white);
+}
+
+.circle-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.circle.tam .circle-label { color: var(--teal); }
+.circle.sam .circle-label { color: #F4A261; }
+.circle.som .circle-label { color: var(--green); }
+
+.market-desc {
+  font-size: 0.82rem;
+  color: var(--gray);
+  max-width: 160px;
+  line-height: 1.5;
+}
+
+/* ========================
+   ABOUT
+   ======================== */
+#about {
+  border-top: 1px solid var(--card-border);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.about-text p {
+  color: var(--off-white);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.about-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.detail-item {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+}
+
+.detail-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--teal);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.detail-value {
+  font-size: 0.95rem;
+  color: var(--white);
+  font-weight: 500;
+}
+
+/* ========================
+   CONTACT
+   ======================== */
+#contact {
+  border-top: 1px solid var(--card-border);
+  text-align: center;
+  padding-bottom: 4rem;
+}
+
+#contact .section-title {
+  margin-bottom: 1rem;
+}
+
+#contact .section-divider {
+  margin: 0 auto 2rem;
+}
+
+.contact-subtitle {
+  color: var(--gray);
+  font-size: 1.05rem;
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 2rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0,180,216,0.15);
+}
+
+.contact-link svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* ========================
+   FOOTER
+   ======================== */
+footer {
+  text-align: center;
+  padding: 2rem 3rem;
+  border-top: 1px solid var(--card-border);
+  font-size: 0.8rem;
+  color: var(--gray);
+}
+
+footer span { color: var(--teal); }
+
+/* ========================
+   RESPONSIVE
+   ======================== */
+@media (max-width: 768px) {
+  nav {
+    padding: 1rem 1.5rem;
+  }
+
+  nav .links { gap: 1.5rem; }
+  nav .links a { font-size: 0.75rem; }
+
+  .hero { padding: 7rem 1.5rem 3rem; }
+
+  section { padding: 4rem 1.5rem; }
+
+  .project-hero-card { padding: 2rem; }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .stats-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .market-row {
+    justify-content: center;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-row {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .role-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Scroll-triggered animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#top" class="logo">SS.</a>
+  <ul class="links">
+    <li><a href="#project">Project</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <p class="hero-eyebrow">Portfolio / 2026</p>
+  <h1><span class="first-name">Sheel</span><br><span class="last-name">Shah.</span></h1>
+  <p class="hero-tagline">Engineer, builder, and entrepreneur focused on deep tech, medical devices, and defense.</p>
+  <div class="hero-cta">
+    <a href="#project" class="btn-primary">View the work &#8595;</a>
+    <a href="#contact" class="btn-secondary">Get in touch</a>
+  </div>
+</section>
+
+<!-- PROJECT: HUDDLE HEALTH -->
+<section id="project">
+  <span class="section-label">01 &mdash; Featured Project</span>
+  <div class="section-divider"></div>
+
+  <div class="project-hero-card reveal">
+    <p class="project-role-badge">Design &amp; Technology Research Lead</p>
+    <h2 class="project-name" style="margin-top:1rem;">Huddle <span>Health.</span></h2>
+    <p class="project-subtitle">An inner-ear wearable that combines impact force tracking and real-time brain activity monitoring into a single device — giving parents, coaches, and trainers the data they need to protect young athletes on the field.</p>
+  </div>
+
+  <!-- Problem -->
+  <div class="content-block reveal">
+    <h3>The Problem</h3>
+    <p>Youth sports are in the middle of a brain health crisis. Up to 50% of concussions go unreported, participation in tackle football has dropped 29% since 2016, and current technology only measures either impact force or brain activity — never both at once. There is no single, all-in-one wearable that gives a complete picture of what's happening inside a young athlete's head during play.</p>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-row reveal">
+    <div class="stat-card">
+      <div class="stat-number">50%</div>
+      <div class="stat-label">of concussions go unreported in youth sports</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">29%</div>
+      <div class="stat-label">decline in youth football participation since 2016</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">87%</div>
+      <div class="stat-label">of youth players feel pressure to play through injuries</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">40%</div>
+      <div class="stat-label">of parents wouldn't let their child play football today</div>
+    </div>
+  </div>
+
+  <!-- Solution -->
+  <div class="content-block reveal">
+    <h3>The Solution</h3>
+    <p>Huddle Health is an inner-ear wearable that tracks both impact force and brain activity during play. By leveraging the inner ear — considered the gold standard for measuring brain movement — the device delivers clinical-grade accuracy in a form factor built for the field. Real-time alerts notify coaches and parents the moment a dangerous hit occurs, replacing guesswork with data.</p>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">&#9889;</div>
+        <h4>Real-Time Impact Detection</h4>
+        <p>Accelerometers and gyroscopes capture every hit, classifying severity and sending instant sideline alerts.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#129504;</div>
+        <h4>EEG Brain Monitoring</h4>
+        <p>In-ear EEG sensors track neural activity continuously, detecting concussion-level events that external sensors miss.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#128202;</div>
+        <h4>Analytics Dashboard</h4>
+        <p>A comprehensive platform for coaches, trainers, and parents to track impact history, brain strain, and season-long player readiness.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Competitive Landscape -->
+  <div class="content-block reveal">
+    <h3>Why Current Solutions Fall Short</h3>
+    <p>No existing product combines impact tracking and brain monitoring in a single real-time device. Huddle Health is the first to do both.</p>
+
+    <div class="competitor-table-wrapper">
+      <table class="competitor-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th class="highlight">Huddle Health</th>
+            <th>Helmet Sensors</th>
+            <th>Mouthguards</th>
+            <th>EEG Devices</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Real-Time Alerts</td>
+            <td class="highlight"><span class="check">&#10003;</span></td>
+            <td><span class="warn">&#9888;</span></td>
+            <td><span class="warn">&#9888;</span></td>
+            <td><span class="cross">&#10007;</span></td>
+          </tr>
+          <tr>
+            <td>Concussion Detection</td>
+            <td class="highlight"><span class="check">&#10003;</span></td>
+            <td><span class="cross">&#10007;</span></td>
+            <td><span class="cross">&#10007;</span></td>
+            <td><span class="warn">&#9888;</span></td>
+          </tr>
+          <tr>
+            <td>Brain Monitoring (EEG)</td>
+            <td class="highlight"><span class="check">&#10003;</span></td>
+            <td><span class="cross">&#10007;</span></td>
+            <td><span class="cross">&#10007;</span></td>
+            <td><span class="check">&#10003;</span></td>
+          </tr>
+          <tr>
+            <td>Impact Tracking</td>
+            <td class="highlight"><span class="check">&#10003;</span></td>
+            <td><span class="check">&#10003;</span></td>
+            <td><span class="check">&#10003;</span></td>
+            <td><span class="cross">&#10007;</span></td>
+          </tr>
+          <tr>
+            <td>Sports-Ready Form Factor</td>
+            <td class="highlight"><span class="check">&#10003;</span></td>
+            <td><span class="check">&#10003;</span></td>
+            <td><span class="check">&#10003;</span></td>
+            <td><span class="cross">&#10007;</span></td>
+          </tr>
+          <tr>
+            <td>All-in-One Device</td>
+            <td class="highlight"><span class="check">&#10003;</span></td>
+            <td><span class="cross">&#10007;</span></td>
+            <td><span class="cross">&#10007;</span></td>
+            <td><span class="cross">&#10007;</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Market -->
+  <div class="content-block reveal">
+    <h3>Market Opportunity</h3>
+    <div class="market-row">
+      <div class="market-circle">
+        <div class="circle tam">
+          <span class="circle-value">$1.2B</span>
+          <span class="circle-label">TAM</span>
+        </div>
+        <p class="market-desc">Youth, high school, and collegiate football plus other contact sports</p>
+      </div>
+      <div class="market-circle">
+        <div class="circle sam">
+          <span class="circle-value">$360M</span>
+          <span class="circle-label">SAM</span>
+        </div>
+        <p class="market-desc">Youth and high school football — highest parental concern</p>
+      </div>
+      <div class="market-circle">
+        <div class="circle som">
+          <span class="circle-value">$18M</span>
+          <span class="circle-label">SOM</span>
+        </div>
+        <p class="market-desc">Capturable within 3 years at 5% SAM penetration</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- My Role -->
+  <div class="content-block reveal">
+    <h3>My Role</h3>
+    <p>As the Design and Technology Research Lead, I drove the product's technical direction and visual identity — from selecting the sensor architecture to shaping how the brand communicates its value.</p>
+
+    <div class="role-grid">
+      <div class="role-item">
+        <span class="role-num">01</span>
+        <p>Researched and selected the inner-ear sensor stack (accelerometers, gyroscopes, in-ear EEG) that forms the device's core technical advantage.</p>
+      </div>
+      <div class="role-item">
+        <span class="role-num">02</span>
+        <p>Led the design of product visuals, the brand identity system, and user-facing dashboard concepts used across pitch materials.</p>
+      </div>
+      <div class="role-item">
+        <span class="role-num">03</span>
+        <p>Conducted competitive analysis across helmet sensors, mouthguards, and EEG wearables to identify the gap Huddle Health fills.</p>
+      </div>
+      <div class="role-item">
+        <span class="role-num">04</span>
+        <p>Contributed to the financial pro forma, business model canvas, and go-to-market strategy that shaped the overall pitch narrative.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <span class="section-label">02 &mdash; About</span>
+  <h2 class="section-title reveal">About.</h2>
+  <div class="section-divider"></div>
+
+  <div class="about-content reveal">
+    <div class="about-text">
+      <p>I'm a current engineering student at USC Viterbi, double-majoring in Electrical Engineering and Biomedical Engineering. My experience spans bioelectronics research labs, DoD contracting companies, and ML/edge-ML startups — and I'm drawn to problems that sit at the intersection of hardware, signal processing, and real-world impact.</p>
+      <p>I'm in the early stages of building toward a deep tech startup, exploring problem spaces in RF/wireless systems, defense applications, and AI-enabled hardware. I'm always looking for hard problems worth solving.</p>
+    </div>
+    <div class="about-details">
+      <div class="detail-item">
+        <div class="detail-label">Education</div>
+        <div class="detail-value">USC Viterbi — B.S. Electrical Engineering &amp; Biomedical Engineering</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Focus Areas</div>
+        <div class="detail-value">Deep Tech &middot; Medical Devices &middot; Defense &middot; RF Systems</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Experience</div>
+        <div class="detail-value">ML Engineering &middot; Bioelectronics Research &middot; DoD Contracting &middot; Venture Scouting</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Location</div>
+        <div class="detail-value">Los Angeles, CA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <span class="section-label">03 &mdash; Contact</span>
+  <h2 class="section-title reveal">Let's connect.</h2>
+  <div class="section-divider"></div>
+  <p class="contact-subtitle reveal">Interested in deep tech, medical devices, defense, or just want to talk shop — I'd love to hear from you.</p>
+
+  <div class="contact-links reveal">
+    <a href="https://www.linkedin.com/in/sheelshah05/" target="_blank" class="contact-link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn &rarr;
+    </a>
+    <a href="mailto:sheelsha@usc.edu" class="contact-link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      Email &rarr;
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 <span>Sheel Shah</span> &middot; USC Viterbi &rsquo;27</p>
+</footer>
+
+<!-- Scroll Reveal Script -->
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15 });
+
+reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
